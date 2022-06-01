@@ -44,4 +44,6 @@ async function pickFile(filePath){
 //  })
 //}
 
-pickFile('./arquivos/texto1.md');
+//pickFile('./arquivos/texto1.md');
+
+module.exports = pickFile;
