@@ -8,7 +8,7 @@ let temp;
 while((temp = regex.exec(text)) !== null){
   resultsArray.push({[temp[1]]: temp[2]});
 }
-  return resultsArray;
+  return resultsArray.length === 0 ? 'There is no links' : resultsArray;
 }
 
 function treatError(error){
@@ -20,7 +20,7 @@ async function pickFile(filePath){
   try{
     const text = await fs.promises
     .readFile(filePath, encoding)
-    console.log(extracLink(text));
+    return extracLink(text);
   } catch(error){
     treatError(error);
   }
@@ -43,7 +43,5 @@ async function pickFile(filePath){
 //    console.table(chalk.blue(text));
 //  })
 //}
-
-//pickFile('./arquivos/texto1.md');
 
 module.exports = pickFile;

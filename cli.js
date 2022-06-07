@@ -1,7 +1,11 @@
+const chalk = require('chalk');
 const pickFile = require('./index');
 
 const way = process.argv;
 
-console.log(pickFile(way[2]));
+async function processText(filePath) {
+    const result = await pickFile(filePath[2]);
+    console.log(chalk.yellow('Links list'), result);
+}
 
-//node .\cli.js .\arquivos\texto1.md
+processText(way);
