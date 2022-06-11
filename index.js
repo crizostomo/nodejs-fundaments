@@ -8,7 +8,7 @@ let temp;
 while((temp = regex.exec(text)) !== null){
   resultsArray.push({[temp[1]]: temp[2]});
 }
-  return resultsArray.length === 0 ? 'There is no links' : resultsArray;
+  return resultsArray.length === 0 ? 'There are no links' : resultsArray;
 }
 
 function treatError(error){

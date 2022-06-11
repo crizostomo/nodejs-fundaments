@@ -14,6 +14,10 @@ describe('pickFile::', () => {
         const result = await pickFile('C:\Users\diogo\OneDrive\Documentos\IT Course\Node\nodejs-fundaments\test\arquivos\texto1.md')
         expect(result).toEqual(arrayResult)
     })
+    it('It should return message "there are no links"', async () => {
+        const result = await pickFile('C:\Users\diogo\OneDrive\Documentos\IT Course\Node\nodejs-fundaments\test\arquivos\texto1_withoutLinks.md')
+        expect(result).toBe('There are no links');
+    })
 })
 
 /*test('It should be a function', () => {
